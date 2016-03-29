@@ -1,0 +1,64 @@
+Shop rents bikes, kayaks, and segways
+needs to keep track of 
+	ongoing rentals 
+	annotates times
+	calculates prices
+	generate receipts
+	
+	rental item
+		bikes
+		kayak
+		segway
+		
+	charges 
+		base fee
+		per hour fee
+		
+constant TAXES_RATE = 1.07
+getters and setters for all attributes
+rentalStartDate = null
+clientName = null
+check type (bike, kayak, or segway)
+	bike is default if none is picked
+	
+rent (clientName, rentalStartDate)
+	rentalStartDate = current system time
+
+available()
+	if rentalStartDate = null
+		return true
+	else
+		return false
+
+returnItem
+	timeUsed = currentTime - rentalStartDate
+	totalPrice = (baseFee + hourPrice*timeUsed)*TAXES_RATE
+	create receipt
+	reset the rental item to null
+	return receipt
+	
+Reciept
+	Client Name: Harry P.
+	Rented item id: B0001 (bike)
+	Rental started: 03/12/2016 11:45:04
+	Rental ended: 03/12/2016 12:52:16
+	Rental time: 01:07:12
+	Base fee: 15.00
+	Hour price: 22.99
+	Sub total: 40.75
+	Taxes (7%): 2.85
+	TOTAL CHARGES: 43.60
+	
+RentalManager
+	getters and setters for both attributes
+	initializes the ArrayList's rentalItems and receiptHistory to be empty
+	loadItems reads a file and creates RentalItems objects out of each of the lines from the file
+		itemId,type,baseFee,hourPrice
+	getAvailableItems returns and ArrayList of all the RentalItems available
+	getAllItems returns all the items in an ArrayList
+	removeAllItems empties the rentalItems ArrayList
+	addReceipt(Receipt) adds a receipt item to the receiptHistory
+	computeTotalIncome sums all the charges fromt eh receiptHistory
+	printReceipt is static and will recieve a receipt and generate a textFile of the receipt
+		03/12/2016 11:45:04_Harry P.txt
+		the Date is the rentalStartDate
