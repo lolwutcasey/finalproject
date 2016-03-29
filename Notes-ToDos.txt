@@ -49,6 +49,8 @@ Reciept
 	Taxes (7%): 2.85
 	TOTAL CHARGES: 43.60
 	
+
+################# DONE ###########################	
 RentalManager
 	getters and setters for both attributes
 	initializes the ArrayList's rentalItems and receiptHistory to be empty
@@ -62,3 +64,6 @@ RentalManager
 	printReceipt is static and will recieve a receipt and generate a textFile of the receipt
 		03/12/2016 11:45:04_Harry P.txt
 		the Date is the rentalStartDate
+##################################################
+
+just needs some testing... thinks that RentalItem isn't in the same directory for some reason
