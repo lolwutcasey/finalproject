@@ -42,7 +42,6 @@ public class RentalItem {
 
 	 //PART D NEED HELP
 	public void Rent(String clientName){
-
 	}
 
 	//PART E DONE
